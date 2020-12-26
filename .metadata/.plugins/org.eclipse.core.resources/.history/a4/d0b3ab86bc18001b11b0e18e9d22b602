@@ -1,0 +1,26 @@
+package member.main;
+
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		Scanner in = new Scanner(System.in);
+		int i =0; 
+		String name="";
+		String addy="";
+		double don = 0.0;
+		
+		System.out.println("Enter your Id\n");
+		i = in.nextInt();
+		System.out.println("Enter your name");
+		name=in.nextLine();
+		System.out.println("Enter your Address");
+		name=in.nextLine();
+		System.out.println("Enter your Donation Amount");
+		name=in.nextDouble();
+
+	}
+
+}

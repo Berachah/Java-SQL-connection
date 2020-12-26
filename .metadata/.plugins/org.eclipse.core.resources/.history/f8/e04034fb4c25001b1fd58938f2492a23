@@ -1,0 +1,83 @@
+package member.main;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+import member.store.*;
+import member.info.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.Statement;
+import java.sql.SQLException;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		Scanner in = new Scanner(System.in);;
+		int i =0; 
+		String name="";
+		String addy="";
+		double don = 0.0;
+		
+		
+		
+		int count=0;
+		System.out.print("How many new members: ");
+		int total = in.nextInt();
+		ArrayList<info> list = new ArrayList<info>();
+		
+		while(count < total)
+		{
+			System.out.println("Enter your name:");
+			name=in.nextLine();
+			name+=in.nextLine();
+			System.out.print("\n");
+			System.out.println("Enter your Id:");
+			i = in.nextInt();
+			System.out.println("Enter your Donation Amount:");
+			don=in.nextDouble();
+			System.out.println("Enter your Address:");
+			addy=in.nextLine();
+			
+	
+			
+			System.out.println("Id:" + i + "\tName:" + name +"\tAddress:" + addy+ "\tDonation:"+ don);
+			
+			store val= new store();
+			list.add(count, val.Description(i,name,addy,don));
+			count++;
+		}
+	  String url ="jdbc:mysql://127.0.0.1:3306/donations useSSL=false&allowPublicKeyRetrieval=true";
+	  String username="root";
+	  String password="root";
+	 
+	  for(int j=0; j<list.size(); j++)
+	  {
+		 System.out.print("ID: " + list.get(j).getId() + "\tNmae:"+ list.get(j).getName() +"\tAddress:" + list.get(j).getAddress() +"\tDonation" + list.get(j).getDonation());
+	  }
+	  
+	  /*
+	  try {
+		  Connection connection = DriverManager.getConnection(url,username,password);
+		  
+		  for(int j=0; j<list.size(); j++)
+		  {
+			   ArrayList<info> temp = new ArrayList<info>();
+			   /*
+			   temp= list;
+			  String sql= "INSERT INTO info (Id, name, Amount, Address)" + "VALUES (, 85)";
+				
+				
+				Statement statement = connection.createStatement();
+				int rows = statement.executeUpdate();
+				
+				if(rows > 0) {
+					System.out.println("Row has been inserted.");
+					
+				
+		  }
+		  }}*/
+		
+	}
+
+}

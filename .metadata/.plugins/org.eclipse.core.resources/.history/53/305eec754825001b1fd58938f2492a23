@@ -1,0 +1,46 @@
+package member.main;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+import member.store.*;
+import member.info.*;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		Scanner in = new Scanner(System.in);
+		int i =0; 
+		String name="";
+		String addy="";
+		double don = 0.0;
+		
+		
+		
+		int count=0;
+		System.out.print("How many new members: ");
+		int total = in.nextInt();
+		ArrayList<info> list = new ArrayList<info>();
+		
+		while(count < total)
+		{
+			System.out.print("Enter your name:");
+			name=in.next();
+			System.out.print("Enter your Id:");
+			i = in.nextInt();
+			System.out.print("Enter your Donation Amount:");
+			don=in.nextDouble();
+			System.out.print("Enter your Address:");
+			addy=in.next();
+			
+	
+			
+			System.out.println("Id:" + i + "\tName:" + name +"\tAddress:" + addy+ "\tDonation:"+ don);
+			
+			store val= new store();
+			list.add(count, val.Description(i,name,addy,don));
+			count++;
+		}
+	}
+
+}

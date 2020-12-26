@@ -1,0 +1,11 @@
+package member.info;
+
+public class info {
+
+	private   int id=0; 
+	private String name;
+	private String Address;
+	private double donate;
+	
+	
+}

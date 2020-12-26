@@ -1,0 +1,19 @@
+package member.store;
+
+import java.util.ArrayList;
+import member.info.*;
+
+
+public class store {
+
+	info in;
+	
+	public info Description(int id2, String name2, String addy, double don)
+	{
+		in.setId(id2);
+		in.setAddress(addy);
+		in.setName(name2);
+		in.setDonation(don);
+		return in;
+	}
+}
